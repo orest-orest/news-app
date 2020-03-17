@@ -1,0 +1,1 @@
+export var RECEIVE_NEWS_LIST = "RECEIVE_NEWS_LIST";
