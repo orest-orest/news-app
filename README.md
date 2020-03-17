@@ -1,7 +1,7 @@
 Application site to display world news using React, Redux and Router. API what i use is http://newsapi.org/.
 
 # H1 General functionality:
-Authenticate user (login + logout button on profile page)
+⋅⋅*Authenticate user (login + logout button on profile page)
 Site have 4 clickable pages
 Takes latest world news
 
