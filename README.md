@@ -9,6 +9,7 @@ At the moment, the link with my aplication https://orest-forest.github.io/news-a
 
 # To get the frontend running locally:
 
+* clone this repository
 * npm install to install all req'd dependencies
 * npm start to start the local server (this project uses create-react-app)
 
