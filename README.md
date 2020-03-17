@@ -1,4 +1,4 @@
-Application site to display world news using React and Redux. API what I useDd is http://newsapi.org/.
+Application site to display world news using React and Redux. API what I used is http://newsapi.org/.
 
 # General functionality:
 * Authenticate user (login + logout button on profile page)
