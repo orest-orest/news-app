@@ -17,6 +17,7 @@ class News extends Component {
                 Author : {news.author}
                 <h5>Title : {news.title}</h5>
                 <p>Description : {news.description}</p>
+                <img class="img-fluid" src={news.urlToImage} />
                 <p>{news.content}</p>
             </ul>
         ));
