@@ -1,7 +1,7 @@
 import * as types from './action-types.jsx';
 
 
-const RECEIVE_NEWS_URL = 'http://newsapi.org/v2/top-headlines?' +
+const RECEIVE_NEWS_URL = 'https://newsapi.org/v2/top-headlines?' +
     'country=us&' +
     'apiKey=5c6529ff913341fd9e4ca95fcf4742bf';
 
