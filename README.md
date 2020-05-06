@@ -5,7 +5,7 @@ Application site to display world news using React and Redux. API what I used is
 * Site have 4 clickable pages
 * Takes latest world news
 
-https://orest-forest.github.io/news-app/
+You can see how the aplication work at https://orest-forest.github.io/news-app/.
 
 # To get the frontend running locally:
 
