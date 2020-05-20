@@ -10,7 +10,7 @@ You can see how the aplication work at https://orest-forest.github.io/news-app/.
 # To get the frontend running locally:
 
 * clone this repository
-* npm install to install all req'd dependencies
+* npm install to install all required dependencies
 * npm start to start the local server (this project uses create-react-app)
 
 
