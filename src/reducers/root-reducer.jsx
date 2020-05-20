@@ -1,6 +1,12 @@
 import {combineReducers} from 'redux';
-import SampleReducer from './sample-reducer.jsx';
+import newsReducer from './news-reducer.jsx';
+import reduceLogin from './profile-reducer.jsx';
+import loader from './loader-reducer.jsx'
+
 const rootReducer = combineReducers({
-    SampleReducer
+    newsReducer,
+    reduceLogin,
+    loader
 });
+
 export default rootReducer;

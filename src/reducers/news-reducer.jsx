@@ -1,6 +1,7 @@
 import initialState from './initial-state.jsx';
 import { RECEIVE_NEWS_LIST} from '../actions/action-types.jsx';
-export default function reduce(state = initialState, action) {
+
+export default function newsReducer(state = initialState, action) {
     switch (action.type) {
         case RECEIVE_NEWS_LIST:
             return Object.assign({}, state, { newsList: action.newsList});
@@ -8,3 +9,4 @@ export default function reduce(state = initialState, action) {
             return state;
     }
 }
+

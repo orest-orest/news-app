@@ -1,23 +1,33 @@
 import React, {Component} from 'react';
-import { user } from './App';
+
 import { Route, Redirect, Link } from 'react-router-dom';
+import {connect} from "react-redux";
+import {loginExit} from "../actions/profile-action.jsx";
 
 
+ class Profile extends React.Component {
+     constructor(props) {
+         super(props);
 
-export default class Profile extends React.Component {
+         this.logOut =
+             this.logOut.bind(this);
+     };
 
-    logOut () {
 
-        user.isOpen = false;
-        console.log(user.isOpen);
+    logOut(event)  {
+        event.preventDefault();
 
+        console.log(this.props.user);
+
+        this.props.loginExit();
 
     }
 
-    render () {console.log(user.isOpen);
+    render () {console.log(this.props.user.isOpen);
+
         return (
 
-                user.isOpen ?
+                this.props.user.isOpen ?
                     <div>
                         <p>You logged in</p>
                         <Link to='/' >
@@ -29,3 +39,13 @@ export default class Profile extends React.Component {
 
 }
 
+const mapStateToProps = state => ({
+    ...state.reduceLogin
+});
+
+const mapDispatchToProps = {
+    loginExit
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

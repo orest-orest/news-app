@@ -1,95 +1,96 @@
 import React, {Component} from 'react';
-import Profile from "./Profile";
-import { Route, Redirect } from 'react-router-dom';
-import { user } from './App';
 
+import {Route, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {loginVerification} from "../actions/profile-action.jsx";
 
+import {bindActionCreators} from "redux";
 
-
-
-export default class Login extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: {login: '', password: '', isOpen: false},
+            login: 'admin',
+            password: '12345'
         };
-        this.handleChangeLogin =
-            this.handleChangeLogin.bind(this);
-        this.handleChangePassword =
-            this.handleChangePassword.bind(this);
-
-        this.handleLogin =
-            this.handleLogin.bind(this);
     };
 
-    handleChangeLogin (event) {
-        this.setState ({
+    handleChangeLogin = event => {
+        this.setState({
             login:
             event.target.value,
-        })};
+        })
+    };
 
-    handleChangePassword (event) {
-        this.setState ({
-            password:
+    handleChangePassword = event => {
+        this.setState({
+                password:
                 event.target.value,
             }
-        ); }
+        );
+    };
 
-    handleLogin (event) {
-
+    handleLogin = event => {
         event.preventDefault();
+        console.log(this.props.user);
+        if (this.state.login === this.props.user.login) {
+            if (this.state.password === this.props.user.password) {
+                this.props.loginVerification()
+             }}
+        };
 
-
-
-        if (this.state.login === user.login) {
-          if (this.state.password === user.password) {
-              this.setState(state => ({
-                  isOpen: state.users.isOpen = true
-              }));
-              user.isOpen = true;
-
-              console.log(user.isOpen);
-              console.log(this.state.users.isOpen);
-          }
-        }
-
-
-        //console.log(this.state.users.length);    // console.log(this.state.login) видит поле логина, не стирать!!!
-
-    }
-
-
-    render() {
-
-        return(
-            <div  class="container-fluid">
-                <form class="container"  onSubmit = {this.handleSubmit}>
-                    <label>
-                        login
-                        <input class="container form-control" type='text'
-                               value={this.state.login}
-                               onChange = {this.handleChangeLogin}
-                        ></input>
-                    </label>
-                    <label>
-                        password
-                        <input class="container form-control" type='password'
-                               value={this.state.password}
-                               onChange = {this.handleChangePassword}
-                        ></input>
-                    </label>
-
-                </form>
-                <form class="container" onClick = {this.handleLogin}>
-                    <div>
-                        <button>вход</button>
+ render() {
+        return (
+            <div class="container pt-3 col-2">
+                <form>
+                    <div class="form-group">
+                        <label>
+                            login
+                            <input class="form-control" type='text'
+                                   value={this.state.login}
+                                   onChange={this.handleChangeLogin}
+                            ></input>
+                        </label>
                     </div>
+                    <div className="form-group">
+                        <label>
+                            password
+                            <input class="form-control" type='password'
+                                   value={this.state.password}
+                                   onChange={this.handleChangePassword}
+                            ></input>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit"
+                                onClick={this.handleLogin}>вход
+                        </button>
+                    </div>
+
                 </form>
 
-                {this.state.users.isOpen ? <Redirect to= '/Profile' /> : 'Enter password'}
+                {this.props.user.isOpen ? <Redirect to='/Profile' /> : 'Enter password'}
 
 
             </div>
         )
     }
 }
+
+
+
+const mapStateToProps = state => ({
+    ...state.reduceLogin
+});
+
+// const mapDispatchToProps = dispatch => ({
+//     loginVerification,
+//     dispatch
+// });
+
+const mapDispatchToProps = {
+    loginVerification
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
