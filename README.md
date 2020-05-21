@@ -2,6 +2,7 @@ Application site to display world news using React and Redux. API what I used is
 
 # General functionality:
 * Authenticate user (login + logout button on profile page)
+(Login: admin, password: 12345)
 * Site have 3 clickable pages
 * Takes latest world news
 
