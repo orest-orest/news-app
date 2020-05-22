@@ -3,7 +3,7 @@ import {hideLoader, showLoader} from "./loader-action.jsx";
 
 const RECEIVE_NEWS_URL = 'https://newsapi.org/v2/top-headlines?' +
     'country=us&' +
-    'apiKey=5c6529ff913341fd9e4ca95fcf4742bf';
+    '0ebfabb04162492590cc91a7665c3555';
 
 function receiveNews(newsList) {
     return {type: types.RECEIVE_NEWS_LIST, newsList: newsList};
