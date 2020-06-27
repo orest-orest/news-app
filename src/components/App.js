@@ -11,12 +11,12 @@ class App extends React.Component {
         return (
 
             <div>
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-                    <ul class="nav nav-inline">
-                        <li class="nav-item active"><Link class="nav-link" to='/'>Home page</Link></li>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+                    <ul className="nav nav-inline">
+                        <li className="nav-item active"><Link className="nav-link" to='/'>Home page</Link></li>
 
-                        <li class="nav-item "><Link class="nav-link" to='/News'>News</Link></li>
-                        <li class="nav-item "><Link class="nav-link" to='/Profile'>Profile</Link></li>
+                        <li className="nav-item "><Link className="nav-link" to='/News'>News</Link></li>
+                        <li className="nav-item "><Link className="nav-link" to='/Profile'>Profile</Link></li>
 
                     </ul>
                 </nav>

@@ -16,9 +16,9 @@ class News extends Component {
 
         let newsElements = [];
         this.props.newsList.forEach(news => newsElements.push(
-            <div class="container">
-                <ul class="list-group">
-                    <li class="col-6 list-group-item">
+            <div className="container" key={news.title}>
+                <ul className="list-group">
+                    <li className="col-6 list-group-item">
                         <h5>Title : {news.title}</h5>
                         <img className="container-fluid " src={news.urlToImage} width="auto" height="auto"/>
                         <p>{news.description}</p>
@@ -30,7 +30,7 @@ class News extends Component {
 
         return (
             <div>
-                <h1 class="container-fluid text-center">News</h1>
+                <h1 className="container-fluid text-center">News</h1>
                 <Loader/>
                 {newsElements}
 
@@ -46,7 +46,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     fetchNews,
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(News);

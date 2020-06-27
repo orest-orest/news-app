@@ -41,12 +41,12 @@ class Login extends React.Component {
 
  render() {
         return (
-            <div class="container pt-3 col-2">
+            <div className="container pt-3 col-2">
                 <form>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>
                             login
-                            <input class="form-control" type='text'
+                            <input className="form-control" type='text'
                                    value={this.state.login}
                                    onChange={this.handleChangeLogin}
                             ></input>
@@ -55,7 +55,7 @@ class Login extends React.Component {
                     <div className="form-group">
                         <label>
                             password
-                            <input class="form-control" type='password'
+                            <input className="form-control" type='password'
                                    value={this.state.password}
                                    onChange={this.handleChangePassword}
                             ></input>

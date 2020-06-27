@@ -10,12 +10,14 @@ const RECEIVE_NEWS_URL = 'https://newsapi.org/v2/top-headlines?' +
 
 
 function receiveNews(newsList) {
+
     return {type: types.RECEIVE_NEWS_LIST, newsList: newsList};
 }
 
 
 
 export const fetchNews = () => {
+    console.log('here')
     return async dispatch => {
         dispatch(showLoader());
         const req = new Request(corsProxy + RECEIVE_NEWS_URL);
